@@ -17,12 +17,22 @@ class MyApp extends StatelessWidget {
         ),
         body: Center(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               SizedBox(
-                height: 250.0,
-                width: 350.0,
-                child: Image.asset("assets/oveja.png")
-              )
+                  height: 250.0,
+                  width: 350.0,
+                  child: Image.asset(
+                    "assets/oveja.png",
+                    fit: BoxFit.cover,
+                  )),
+              SizedBox(
+                  height: 250.0,
+                  width: 350.0,
+                  child: Image.network(
+                    "https://www.minecraft.net/content/dam/minecraftnet/community/events/cy2024/minecraft-movie/Global-Nav_Panel-Secondary_SS_321x321.jpg",
+                    fit: BoxFit.cover,
+                  ))
             ],
           ),
         ),
@@ -30,7 +40,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
-
-
-
