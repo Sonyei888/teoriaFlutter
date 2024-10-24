@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:teoria_flutter/pages/Pagina1.dart';
+import 'package:teoria_flutter/pages/Pagina2.dart';
 
-void main() {
+void main(List<String> args) {
   runApp(const MyApp());
 }
 
@@ -11,31 +12,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: "Images",
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text("mostra imagenes"),
-        ),
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              SizedBox(
-                height: 250.0,
-                width: 350.0,
-                child: SvgPicture.asset("assets/2.svg"),
-              ),
-              SizedBox(
-                  height: 250.0,
-                  width: 350.0,
-                  child: Image.network(
-                    "https://www.minecraft.net/content/dam/minecraftnet/community/events/cy2024/minecraft-movie/Global-Nav_Panel-Secondary_SS_321x321.jpg",
-                    fit: BoxFit.fitWidth,
-                  ))
-            ],
-          ),
-        ),
-      ),
+      title: "Navegación",
+      initialRoute: "pagina1",
+      routes: {
+        "pagina1": (BuildContext context) => const Pagina1(),
+        "pagina2": (BuildContext context) => const Pagina2()
+      },
     );
   }
 }
