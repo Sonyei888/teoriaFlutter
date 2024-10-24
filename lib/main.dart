@@ -10,24 +10,27 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(primarySwatch: Colors.green),
-      home: RootPage(),
+      title: "Images",
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text("mostra imagenes"),
+        ),
+        body: Center(
+          child: Column(
+            children: [
+              SizedBox(
+                height: 250.0,
+                width: 350.0,
+                child: Image.asset("assets/oveja.png")
+              )
+            ],
+          ),
+        ),
+      ),
     );
   }
 }
 
-class RootPage extends StatefulWidget {
-  const RootPage({super.key});
 
-  @override
-  State<RootPage> createState() => _RootPageState();
-}
 
-class _RootPageState extends State<RootPage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(),
-    );
-  }
-}
+
